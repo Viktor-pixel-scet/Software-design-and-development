@@ -9,7 +9,7 @@ namespace Task1
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            // Створення списку продуктів з назвами та цінами
+
             var products = new List<Product>
             {
                 new Product("Ноутбук", new Money(899, 99)),
@@ -27,12 +27,10 @@ namespace Task1
                 new Product("Павербанк", new Money(39, 99))
             };
 
-            // Зменшення ціни для кількох продуктів
             products[0].DecreasePrice(50); // Ноутбук
             products[2].DecreasePrice(10); // Навушники
             products[4].DecreasePrice(5);  // Миша
 
-            // Виведення ціни продуктів після зменшення
             Console.WriteLine("=================================");
             Console.WriteLine("     Зміни цін на продукти:");
             Console.WriteLine("=================================");
@@ -44,38 +42,40 @@ namespace Task1
                 Console.WriteLine("---------------------------------");
             }
 
-            // Створення складів для кожного продукту
+            var reportingService = new ReportingService();
             var warehouses = new List<Warehouse>();
+
             foreach (var product in products)
             {
                 var warehouse = new Warehouse(
                     product.Name,
                     "шт.",
                     product.Price,
-                    new Random().Next(50, 200), // Випадкова кількість на складі
+                    new Random().Next(50, 200),
                     DateTime.Now
                 );
                 warehouses.Add(warehouse);
             }
 
-            // Реєстрація прибутку та витрат для кожного складу
             Console.WriteLine("=================================");
             Console.WriteLine("     Операції з товарами:");
             Console.WriteLine("=================================");
+
             foreach (var warehouse in warehouses)
             {
                 Console.WriteLine($"Товар на складі: {warehouse.ProductName}");
-                Reporting.RegisterIncome(warehouse, 50);
-                Reporting.RegisterExpenditure(warehouse, 30);
+                reportingService.RegisterIncome(warehouse, 50);
+                reportingService.RegisterExpenditure(warehouse, 30);
                 Console.WriteLine($"Прибуток: +50 шт., Витрата: -30 шт.");
                 Console.WriteLine("---------------------------------");
             }
 
-            // Звіт про інвентаризацію
             Console.WriteLine("=================================");
             Console.WriteLine("     Звіт по інвентаризації:");
             Console.WriteLine("=================================");
-            Reporting.InventoryReport(warehouses);
+
+            reportingService.GenerateInventoryReport(warehouses);
+
             Console.WriteLine("=================================");
         }
     }

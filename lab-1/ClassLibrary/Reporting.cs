@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Reporting
+    public class ReportingService : IReportingService
     {
-        public static void RegisterIncome(Warehouse warehouse, int quantity)
+        public void RegisterIncome(Warehouse warehouse, int quantity)
         {
             warehouse.Quantity += quantity;
             Console.WriteLine($"{quantity} {warehouse.ProductName} додано на склад");
         }
 
-        public static void RegisterExpenditure(Warehouse warehouse, int quantity)
+        public void RegisterExpenditure(Warehouse warehouse, int quantity)
         {
             if (warehouse.Quantity >= quantity)
             {
@@ -27,7 +24,7 @@ namespace ClassLibrary
             }
         }
 
-        public static void InventoryReport(List<Warehouse> warehouses)
+        public void GenerateInventoryReport(List<Warehouse> warehouses)
         {
             foreach (var warehouse in warehouses)
             {

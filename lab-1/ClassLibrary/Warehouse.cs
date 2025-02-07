@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Warehouse
+    public class Warehouse : IWarehouseOperation
     {
         public string ProductName { get; set; }
         public string Unit { get; set; }
@@ -21,6 +21,16 @@ namespace ClassLibrary
             UnitPrice = unitPrice;
             Quantity = quantity;
             LastReceived = lastReceived;
+        }
+
+        public void UpdateQuantity(int quantity)
+        {
+            Quantity += quantity;
+        }
+
+        public decimal CalculateTotalValue()
+        {
+            return Quantity * UnitPrice.WholeAmount + (decimal)UnitPrice.FractionalAmount / 100;
         }
     }
 }

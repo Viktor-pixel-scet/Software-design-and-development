@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Product
+    public class Product : IProductOperation
     {
         public string Name { get; set; }
         public Money Price { get; set; }

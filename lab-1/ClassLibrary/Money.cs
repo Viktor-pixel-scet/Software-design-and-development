@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Money
+    public class Money : IMoneyOperation
     {
-        public int WholeAmount { get; set; } // Головна частина (долари, євро, гривні)
-        public int FractionalAmount { get; set; } // Копійки, центи
+        public int WholeAmount { get; set; }
+        public int FractionalAmount { get; set; }
 
         public Money(int wholeAmount, int fractionalAmount)
         {
@@ -19,7 +19,7 @@ namespace ClassLibrary
 
         public void PrintAmount()
         {
-            Console.WriteLine($"{WholeAmount}.{FractionalAmount:D2}"); // Форматуємо копійки двома цифрами
+            Console.WriteLine($"{WholeAmount}.{FractionalAmount:D2}");
         }
 
         public void SetWholeAmount(int amount)
