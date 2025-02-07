@@ -5,7 +5,7 @@ Each class has a clear, focused responsibility:
 - `Warehouse`: Tracks inventory information
 - `Reporting`: Manages inventory operations
 
-Example in [Warehouse.cs, рядок 11](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/Warehouse.cs#L11):
+Example in [Warehouse.cs, рядок 11](https://github.com/Viktor-pixel-scet/Software-design-and-development/lab-1/ClassLibrary/Warehouse.cs#L11):
 ```csharp
 public class Warehouse
 {
@@ -23,7 +23,7 @@ Classes are open for extension but closed for modification:
 - `Product.DecreasePrice()` allows price modification without changing core logic
 - `Reporting` methods can be extended without modifying existing code
 
-Example in [Product.cs, рядок 22](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/Product.cs#L22):
+Example in [Product.cs, рядок 22](https://github.com/Viktor-pixel-scet/Software-design-and-development/lab-1/ClassLibrary/Product.cs#L22):
 ```csharp
 public void DecreasePrice(int amount)
 {
@@ -38,7 +38,7 @@ Reusable methods and centralized logic prevent code duplication:
 - `Reporting` class contains centralized inventory management methods
 - Consistent error handling in operations
 
-Example in [Reporting.cs, рядок 17](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/Reporting.cs#L17):
+Example in [Reporting.cs, рядок 17](https://github.com/Viktor-pixel-scet/Software-design-and-development/lab-1/ClassLibrary/Reporting.cs#L17):
 ```csharp
 public static void RegisterExpenditure(Warehouse warehouse, int quantity)
 {
