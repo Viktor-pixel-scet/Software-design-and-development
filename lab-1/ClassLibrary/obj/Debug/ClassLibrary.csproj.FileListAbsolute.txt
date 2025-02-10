@@ -1,6 +1,0 @@
-D:\2 Курс\Конструювання програмного забезпечення\lab-1\ClassLibrary\bin\Debug\ClassLibrary.dll
-D:\2 Курс\Конструювання програмного забезпечення\lab-1\ClassLibrary\bin\Debug\ClassLibrary.pdb
-D:\2 Курс\Конструювання програмного забезпечення\lab-1\ClassLibrary\obj\Debug\ClassLibrary.csproj.AssemblyReference.cache
-D:\2 Курс\Конструювання програмного забезпечення\lab-1\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
-D:\2 Курс\Конструювання програмного забезпечення\lab-1\ClassLibrary\obj\Debug\ClassLibrary.dll
-D:\2 Курс\Конструювання програмного забезпечення\lab-1\ClassLibrary\obj\Debug\ClassLibrary.pdb

@@ -1,7 +1,0 @@
-D:\2 Курс\Конструювання програмного забезпечення\lab-2\task-1\obj\Debug\task-1.csproj.AssemblyReference.cache
-D:\2 Курс\Конструювання програмного забезпечення\lab-2\task-1\obj\Debug\task-1.csproj.CoreCompileInputs.cache
-D:\2 Курс\Конструювання програмного забезпечення\lab-2\task-1\obj\Debug\lab-2.exe
-D:\2 Курс\Конструювання програмного забезпечення\lab-2\task-1\obj\Debug\lab-2.pdb
-D:\2 Курс\Конструювання програмного забезпечення\lab-2\task-1\bin\Debug\lab-2.exe.config
-D:\2 Курс\Конструювання програмного забезпечення\lab-2\task-1\bin\Debug\lab-2.exe
-D:\2 Курс\Конструювання програмного забезпечення\lab-2\task-1\bin\Debug\lab-2.pdb

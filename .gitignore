@@ -1,0 +1,17 @@
+# Ігноруємо всі bin, obj, .vs у всіх підпапках
+**/bin/
+**/obj/
+**/.vs/
+
+# Ігноруємо файли Visual Studio
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+*.VC.db
+
+# Ігноруємо кеш і тимчасові файли
+*.log
+*.tmp
+*.cache
+*.bak
