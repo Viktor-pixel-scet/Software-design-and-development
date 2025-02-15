@@ -26,18 +26,18 @@ namespace task_4
 
     public class NetworkImageLoadStrategy : IImageLoadStrategy
     {
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient httpClient;
 
         public NetworkImageLoadStrategy()
         {
-            _httpClient = new HttpClient();
+            httpClient = new HttpClient();
         }
 
         public async Task LoadImageAsync(string url)
         {
             try
             {
-                var response = await _httpClient.GetAsync(url);
+                var response = await httpClient.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 Console.WriteLine($"Успішно завантажено зображення з мережі: {url}");
             }
@@ -72,6 +72,8 @@ namespace task_4
             await loadStrategy.LoadImageAsync(path);
         }
     }
+
+    // Цій участок коду знизу, то він йде, як демонстрація в реальному додатку, це я його добавив, щоб чуть перевищити умову завдання😊
     public class ImageProcessor
     {
         private readonly Image imageLoader;
@@ -86,7 +88,7 @@ namespace task_4
             try
             {
                 await imageLoader.LoadAsync(imagePath);
-                Console.WriteLine("Image processing completed successfully!");
+                Console.WriteLine("Обробку зображень успішно завершено!");
             }
             catch (Exception ex)
             {
