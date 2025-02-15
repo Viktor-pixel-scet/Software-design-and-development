@@ -1,0 +1,262 @@
+﻿<Window x:Class="task_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:task_3"
+        mc:Ignorable="d"
+        Title="Графічний Редактор Pro" Height="auto" Width="auto"
+        Background="#f0f2f5"
+        WindowState="Maximized">
+
+    <Window.Resources>
+        <!-- Градієнтні кольори -->
+        <LinearGradientBrush x:Key="PrimaryGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#4361ee" Offset="0"/>
+            <GradientStop Color="#3a0ca3" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="SecondaryGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#4895ef" Offset="0"/>
+            <GradientStop Color="#3f37c9" Offset="1"/>
+        </LinearGradientBrush>
+
+        <!-- Основні кольори -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#ffffff"/>
+        <SolidColorBrush x:Key="TextPrimaryColor" Color="#2b2d42"/>
+        <SolidColorBrush x:Key="BorderColor" Color="#e9ecef"/>
+
+        <!-- Анімації рідненькі😍 -->
+        <Storyboard x:Key="ButtonHoverAnimation">
+            <DoubleAnimation Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleX)"
+                             To="1.05" Duration="0:0:0.2">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleY)"
+                             To="1.05" Duration="0:0:0.2">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <!-- Стиль для заголовків -->
+        <Style x:Key="TitleTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimaryColor}"/>
+            <Setter Property="Margin" Value="0,0,0,25"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="20" Direction="270" ShadowDepth="3" Color="#20000000"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Стиль для підзаголовків -->
+        <Style x:Key="SubtitleTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimaryColor}"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+        </Style>
+
+        <!-- Стиль для ComboBox -->
+        <Style x:Key="PremiumComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Margin" Value="0,0,0,25"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="15" Direction="270" ShadowDepth="2" Color="#15000000"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Стиль для кнопок -->
+        <Style x:Key="PremiumButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="30,0"/>
+            <Setter Property="Background" Value="{StaticResource PrimaryGradient}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="15" Direction="270" ShadowDepth="5" Color="#30000000"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" 
+                                To="1.05" Duration="0:0:0.2">
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation 
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" 
+                                To="1.05" Duration="0:0:0.2">
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" 
+                                To="1" Duration="0:0:0.2">
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation 
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" 
+                                To="1" Duration="0:0:0.2">
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <!-- Стиль для панелей -->
+        <Style x:Key="GlassPanelStyle" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Padding" Value="30"/>
+            <Setter Property="Margin" Value="0,0,0,25"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="30" Direction="270" ShadowDepth="5" Color="#15000000"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="40">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Ліва панель керування -->
+        <ScrollViewer Grid.Column="0">
+            <StackPanel Margin="0,-31,0,31">
+                <TextBlock Text="Оберіть фігуру" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <ComboBox x:Name="ShapeComboBox" 
+              Style="{StaticResource PremiumComboBoxStyle}"
+              SelectionChanged="ShapeComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Коло"/>
+                    <ComboBoxItem Content="Квадрат"/>
+                    <ComboBoxItem Content="Трикутник"/>
+                </ComboBox>
+
+                <TextBlock Text="Тип відображення" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <ComboBox x:Name="RendererComboBox" 
+              Style="{StaticResource PremiumComboBoxStyle}"
+              SelectionChanged="RendererComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Векторне"/>
+                    <ComboBoxItem Content="Растрове"/>
+                </ComboBox>
+                <TextBlock Text="Розмір фігури" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <Slider x:Name="SizeSlider" 
+            Minimum="50" 
+            Maximum="300" 
+            Value="200"
+            ValueChanged="SizeSlider_ValueChanged"
+            Margin="0,0,0,25"/>
+                <TextBlock Text="Колір фігури" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                    <Border Width="40" Height="40" Margin="0,0,10,0" CornerRadius="20"
+                Background="#4361ee" MouseDown="ColorBorder_MouseDown" Cursor="Hand"/>
+                    <Border Width="40" Height="40" Margin="0,0,10,0" CornerRadius="20"
+                Background="#3a0ca3" MouseDown="ColorBorder_MouseDown" Cursor="Hand"/>
+                    <Border Width="40" Height="40" Margin="0,0,10,0" CornerRadius="20"
+                Background="#4895ef" MouseDown="ColorBorder_MouseDown" Cursor="Hand"/>
+                    <Border Width="40" Height="40" Margin="0,0,10,0" CornerRadius="20"
+                Background="#7209b7" MouseDown="ColorBorder_MouseDown" Cursor="Hand"/>
+                </StackPanel>
+
+                <TextBlock Text="Ефекти" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <StackPanel Margin="0,0,0,25">
+                    <CheckBox x:Name="AnimationCheckBox" 
+                  Content="Анімація при появі" 
+                  IsChecked="True"
+                  Margin="0,0,0,10"/>
+                    <CheckBox x:Name="ShadowCheckBox" 
+                  Content="Тінь" 
+                  IsChecked="True"
+                  Margin="0,0,0,10"/>
+                    <CheckBox x:Name="GradientCheckBox" 
+                  Content="Градієнтна заливка" 
+                  IsChecked="True"/>
+                </StackPanel>
+                <Button Content="Намалювати" 
+            Click="DrawButton_Click"
+            Style="{StaticResource PremiumButtonStyle}"/>
+                <TextBlock Text="Консоль" Style="{StaticResource TitleTextBlockStyle}"/>
+                <Border Style="{StaticResource GlassPanelStyle}">
+                    <TextBox x:Name="OutputTextBox"
+                 FontFamily="Cascadia Code"
+                 FontSize="15"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 Height="250"
+                 Padding="15"
+                 Foreground="#2d3436"
+                 VerticalScrollBarVisibility="Auto"/>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Права панель з Canvas -->
+        <Border Grid.Column="1" Margin="40,0,0,0">
+            <DockPanel>
+                <TextBlock Text="Область малювання" 
+                          Style="{StaticResource TitleTextBlockStyle}"
+                          DockPanel.Dock="Top"/>
+
+                <Border Style="{StaticResource GlassPanelStyle}"
+                        Background="#fcfcfc">
+                    <Canvas x:Name="DrawingCanvas" 
+                           ClipToBounds="True">
+                        <Canvas.Effect>
+                            <DropShadowEffect BlurRadius="20" 
+                                            Direction="270" 
+                                            ShadowDepth="2" 
+                                            Color="#10000000"/>
+                        </Canvas.Effect>
+                    </Canvas>
+                </Border>
+
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>

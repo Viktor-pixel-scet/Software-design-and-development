@@ -7,6 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "task-1", "task-1\task-1.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task-2", "RpgGame\task-2.csproj", "{265A7847-9784-416E-84A6-709F38F082D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task-3", "task-3\task-3.csproj", "{2DE8D072-C4D2-4353-BF5B-CD1FDC7B7FD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "task-4", "task-4\task-4.csproj", "{85197701-C9DE-4E99-8EFF-57C6501137E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "task-5", "task-5\task-5.csproj", "{CF848852-268C-4050-A939-734A7036257E}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "task-6.1", "task-6.1\task-6.1.pyproj", "{CBAA1FF6-B093-47D1-ADB0-0A63A3BCD389}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,20 @@ Global
 		{265A7847-9784-416E-84A6-709F38F082D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{265A7847-9784-416E-84A6-709F38F082D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{265A7847-9784-416E-84A6-709F38F082D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE8D072-C4D2-4353-BF5B-CD1FDC7B7FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE8D072-C4D2-4353-BF5B-CD1FDC7B7FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE8D072-C4D2-4353-BF5B-CD1FDC7B7FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE8D072-C4D2-4353-BF5B-CD1FDC7B7FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85197701-C9DE-4E99-8EFF-57C6501137E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85197701-C9DE-4E99-8EFF-57C6501137E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85197701-C9DE-4E99-8EFF-57C6501137E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85197701-C9DE-4E99-8EFF-57C6501137E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF848852-268C-4050-A939-734A7036257E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF848852-268C-4050-A939-734A7036257E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF848852-268C-4050-A939-734A7036257E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF848852-268C-4050-A939-734A7036257E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAA1FF6-B093-47D1-ADB0-0A63A3BCD389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAA1FF6-B093-47D1-ADB0-0A63A3BCD389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
