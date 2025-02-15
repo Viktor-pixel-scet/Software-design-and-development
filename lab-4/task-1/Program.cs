@@ -1,5 +1,4 @@
-﻿
-namespace task_1;
+﻿namespace task_1;
 
 public class Program
 {
