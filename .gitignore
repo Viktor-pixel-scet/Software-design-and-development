@@ -16,6 +16,7 @@
 *.tmp
 *.cache
 *.bak
+*__pycache__
 =======
 bin/
 obj/
