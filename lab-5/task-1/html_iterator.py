@@ -1,5 +1,6 @@
 from typing import Iterator, List, Tuple, Union
 from collections import deque
+from html_lifecycle import HTMLElement
 
 class HTMLTreeIterator:
     def __init__(self, root: HTMLElement):
@@ -18,6 +19,22 @@ class HTMLTreeIterator:
         for child in current.children:
             self.queue.append((child, path + [current]))
         
+        return current, path
+
+class HTMLDepthFirstIterator:
+    def __init__(self, root: HTMLElement):
+        self.root = root
+        self.stack = [(root, [])]
+        
+    def __iter__(self) -> Iterator[Tuple[HTMLElement, List[HTMLElement]]]:
+        return self
+        
+    def __next__(self) -> Tuple[HTMLElement, List[HTMLElement]]:
+        if not self.stack:
+            raise StopIteration
+        current, path = self.stack.pop()
+        for child in reversed(current.children):
+            self.stack.append((child, path + [current]))
         return current, path
 
 class HTMLQuerySelector:
