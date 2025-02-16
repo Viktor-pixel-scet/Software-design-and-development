@@ -1,5 +1,6 @@
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Any
 from collections import defaultdict
+from html_lifecycle import HTMLElement
 
 class HTMLMetricsCollector:
     def __init__(self):
