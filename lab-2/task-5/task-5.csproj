@@ -63,8 +63,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ClassLibrary.cs" />
-    <Compile Include="Interfaces.cs" />
+    <Compile Include="Interfaces\Character.cs" />
+    <Compile Include="Interfaces\CharacterDirector.cs" />
+    <Compile Include="Interfaces\ICharacterBuilder.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

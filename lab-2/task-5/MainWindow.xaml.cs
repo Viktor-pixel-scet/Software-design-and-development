@@ -98,23 +98,31 @@ namespace task_5
         {
             try
             {
-                var builder = new HeroBuilder()
-                    .SetHeight(int.Parse(HeroHeight.Text))
-                    .SetPhysique(((ComboBoxItem)HeroPhysique.SelectedItem).Content.ToString())
-                    .SetHairColor(((ComboBoxItem)HeroHairColor.SelectedItem).Content.ToString())
-                    .SetEyeColor(((ComboBoxItem)HeroEyeColor.SelectedItem).Content.ToString())
-                    .SetClothing(((ComboBoxItem)HeroClothing.SelectedItem).Content.ToString())
-                    .SetBaseStats(15, 12, 10, 14)
-                    .SetLevel(1)
-                    .AddAbility("Базова атака")
-                    .AddAbility("Захист")
-                    .AddPassiveSkill("Воля героя");
+                var builder = new HeroBuilder();
+                var director = new CharacterDirector(builder);
+                string characterClass = ((ComboBoxItem)HeroClass.SelectedItem).Content.ToString().ToLower();
+
+                switch (characterClass)
+                {
+                    case "воїн":
+                        director.ConstructWarrior("Hero");
+                        break;
+                    case "маг":
+                        director.ConstructMage("Hero");
+                        break;
+                    case "лучник":
+                        director.ConstructRogue("Hero");
+                        break;
+                    default:
+                        throw new ArgumentException("Невідомий клас персонажа");
+                }
 
                 hero = builder.Build();
-                hero.CharacterClass = ((ComboBoxItem)HeroClass.SelectedItem).Content.ToString();
+
                 hero.WeaponType = ((ComboBoxItem)HeroWeapon.SelectedItem).Content.ToString();
-                hero.Attack = int.Parse(HeroAttack.Text);
-                hero.Defense = int.Parse(HeroDefense.Text);
+                hero.HairColor = ((ComboBoxItem)HeroHairColor.SelectedItem).Content.ToString();
+                hero.EyeColor = ((ComboBoxItem)HeroEyeColor.SelectedItem).Content.ToString();
+                hero.Clothing = ((ComboBoxItem)HeroClothing.SelectedItem).Content.ToString();
 
                 UpdateCharacterVisual(HeroImage, hero);
                 UpdateHeroInfo();
@@ -132,27 +140,39 @@ namespace task_5
         {
             try
             {
-                var builder = new EnemyBuilder()
-                    .SetHeight(int.Parse(EnemyHeight.Text))
-                    .SetPhysique(((ComboBoxItem)EnemyPhysique.SelectedItem).Content.ToString())
-                    .SetHairColor(((ComboBoxItem)EnemyHairColor.SelectedItem).Content.ToString())
-                    .SetEyeColor(((ComboBoxItem)EnemyEyeColor.SelectedItem).Content.ToString())
-                    .SetClothing(((ComboBoxItem)EnemyClothing.SelectedItem).Content.ToString())
-                    .SetBaseStats(14, 13, 12, 15)
-                    .SetLevel(1)
-                    .AddAbility("Темний удар")
-                    .AddAbility("Тіньовий захист")
-                    .AddPassiveSkill("Темна аура");
+                var builder = new EnemyBuilder();
+                var director = new CharacterDirector(builder);
+
+                string characterClass = ((ComboBoxItem)EnemyClass.SelectedItem).Content.ToString().ToLower();
+
+                switch (characterClass)
+                {
+                    case "воїн":
+                        director.ConstructWarrior("Enemy");
+                        break;
+                    case "маг":
+                        director.ConstructMage("Enemy");
+                        break;
+                    case "розбійник":
+                        director.ConstructRogue("Enemy");
+                        break;
+                    default:
+                        throw new ArgumentException("Невідомий клас персонажа");
+                }
 
                 enemy = builder.Build();
+
+                enemy.Height = int.Parse(EnemyHeight.Text);
                 enemy.CharacterClass = ((ComboBoxItem)EnemyClass.SelectedItem).Content.ToString();
                 enemy.WeaponType = ((ComboBoxItem)EnemyWeapon.SelectedItem).Content.ToString();
-                enemy.Attack = int.Parse(EnemyAttack.Text);
-                enemy.Defense = int.Parse(EnemyDefense.Text);
+                enemy.HairColor = ((ComboBoxItem)EnemyHairColor.SelectedItem).Content.ToString();
+                enemy.EyeColor = ((ComboBoxItem)EnemyEyeColor.SelectedItem).Content.ToString();
+                enemy.Clothing = ((ComboBoxItem)EnemyClothing.SelectedItem).Content.ToString();
 
                 UpdateCharacterVisual(EnemyImage, enemy);
                 UpdateEnemyInfo();
                 UpdateHealthBars();
+
                 AddBattleLog("Ворога успішно створено!");
             }
             catch (Exception ex)

@@ -373,11 +373,9 @@
                         <StackPanel>
                             <Label Content="Клас персонажа:"/>
                             <ComboBox x:Name="EnemyClass">
-                                <ComboBoxItem>Темний лицар</ComboBoxItem>
-                                <ComboBoxItem>Некромант</ComboBoxItem>
-                                <ComboBoxItem>Вбивця</ComboBoxItem>
-                                <ComboBoxItem>Чорний маг</ComboBoxItem>
-                                <ComboBoxItem>Демонічний лучник</ComboBoxItem>
+                                <ComboBoxItem>Воїн</ComboBoxItem>
+                                <ComboBoxItem>Маг</ComboBoxItem>
+                                <ComboBoxItem>Розбійник</ComboBoxItem>
                             </ComboBox>
 
                             <Label Content="Тип зброї:"/>
