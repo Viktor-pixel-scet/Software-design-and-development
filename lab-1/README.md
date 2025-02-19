@@ -59,21 +59,34 @@ Simple, straightforward implementations:
 - Methods do one thing
 - Clear, readable naming conventions
 - Minimal complexity in logic
+- The methods have a simple and straightforward implementation:
+- Example in [Warehouse.cs, рядки 26-34](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/ClassLibrary/Warehouse.cs#L26-34):
 
 ## 5. Fail Fast
 Immediate validation and error checking:
 - `RegisterExpenditure` checks quantity before processing
 - Prevents invalid operations early in the process
+- Immediate validation and error checking:
+- Example in [Reporting.cs, рядки 14-25](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/ClassLibrary/Reporting.cs#L14-25):
 
 ## 6. Composition Over Inheritance
 Favors object composition:
 - `Warehouse` contains `Money` as a composition
 - Flexible design allowing easier modifications
+- Using composition instead of imitation:
+- Example in [Product.cs, рядки 9-26](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/ClassLibrary/Product.cs#L26-34):
 
-## 7. Program to Interfaces not Implementations
-While not explicitly used, the design allows for easy interface implementation:
-- Methods could be easily refactored to work with interfaces
-- Loose coupling between classes
+## 7. Program to Interfaces
+- All major classes implement the appropriate interfaces
+- The use of interfaces provides a weak connection between classes
+- Defining contracts through interfaces:
+- Using interfaces to define contracts:
+- Example in [interface.cs, рядки 21-25](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/ClassLibrary/interface.cs#L21-25):
+
+- ## 8. Open/Closed Principle (OCP)
+- Classes are open for extension, but closed for modification:
+
+- Interfaces.cs (рядки 24-30) Example in [interface.cs, рядки 27-32](https://github.com/Viktor-pixel-scet/Software-design-and-development/blob/main/lab-1/ClassLibrary/interface.cs#L27-32):
 
 ## Additional Notes
 - Demonstrates basic principles of clean, maintainable code
