@@ -43,10 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassLibrary.cs" />
+    <Compile Include="abstract_class_SubscriptionFactory.cs" />
+    <Compile Include="abstrct_class_Subscription.cs" />
+    <Compile Include="ManagerCallFactory.cs" />
+    <Compile Include="DomesticSubscription.cs" />
+    <Compile Include="EducationalSubscription.cs" />
     <Compile Include="Interface.cs" />
+    <Compile Include="MobileAppFactory.cs" />
+    <Compile Include="PremiumSubscription.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebSiteFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

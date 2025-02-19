@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Interface;
-using ClassLibrary;
+using lab_2;
 
 class Program
 {
