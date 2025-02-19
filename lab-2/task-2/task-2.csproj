@@ -43,13 +43,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassLibrary.cs" />
-    <Compile Include="Interface.cs" />
+    <Compile Include="Factories\BalaxyFactory.cs" />
+    <Compile Include="Factories\HuaweaFactory.cs" />
+    <Compile Include="Factories\IProneFactory.cs" />
+    <Compile Include="Factories\KiaomiFactory.cs" />
+    <Compile Include="Factories\NoklaFactory.cs" />
+    <Compile Include="Interfaces\DeviceInterfaces.cs" />
+    <Compile Include="Interfaces\IDevice.cs" />
+    <Compile Include="Interfaces\ITechFactory.cs" />
+    <Compile Include="Models\Balaxy\BalaxyEBook.cs" />
+    <Compile Include="Models\Balaxy\BalaxyLaptop.cs" />
+    <Compile Include="Models\Balaxy\BalaxyNetbook.cs" />
+    <Compile Include="Models\Balaxy\BalaxySmartphone.cs" />
+    <Compile Include="Models\BaseDevice.cs" />
+    <Compile Include="Models\Huawea\HuaweaLaptop.cs" />
+    <Compile Include="Models\Huawea\HuaweaSmartphone.cs" />
+    <Compile Include="Models\IProne\IProneEBook.cs" />
+    <Compile Include="Models\IProne\IProneLaptop.cs" />
+    <Compile Include="Models\IProne\IProneNetbook.cs" />
+    <Compile Include="Models\IProne\IProneSmartphone.cs" />
+    <Compile Include="Models\IProne\IProneTablet.cs" />
+    <Compile Include="Models\Kiaomi\KiaomiEBook.cs" />
+    <Compile Include="Models\Kiaomi\KiaomiLaptop.cs" />
+    <Compile Include="Models\Kiaomi\KiaomiNetbook.cs" />
+    <Compile Include="Models\Kiaomi\KiaomiSmartphone.cs" />
+    <Compile Include="Models\Nokla\NoklaLaptop.cs" />
+    <Compile Include="Models\Nokla\NoklaSmartphone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TechStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
