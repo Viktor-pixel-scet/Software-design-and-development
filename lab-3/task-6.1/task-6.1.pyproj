@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cbaa1ff6-b093-47d1-adb0-0a63a3bcd389</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>task_6.1.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="task_6.1.py" />
+    <Compile Include="design_patterns\flyweight.py" />
+    <Compile Include="models\html_element.py" />
+    <Compile Include="services\parser.py" />
+    <Compile Include="main.py" />
+    <Compile Include="utils\memory_calculator.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="models\" />
+    <Folder Include="design_patterns\" />
+    <Folder Include="data\" />
+    <Folder Include="utils\" />
+    <Folder Include="services\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

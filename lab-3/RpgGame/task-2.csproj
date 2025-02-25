@@ -63,8 +63,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ClassLibrary.cs" />
-    <Compile Include="Interfaces.cs" />
+    <Compile Include="Decorators\Accessories\MagicRing.cs" />
+    <Compile Include="Decorators\Armor\Armor.cs" />
+    <Compile Include="Decorators\Armor\Shield.cs" />
+    <Compile Include="Decorators\EquipmentDecorator.cs" />
+    <Compile Include="Decorators\Weapons\Staff.cs" />
+    <Compile Include="Decorators\Weapons\Sword.cs" />
+    <Compile Include="Heroes\Mage.cs" />
+    <Compile Include="Heroes\Paladin.cs" />
+    <Compile Include="Heroes\Warrior.cs" />
+    <Compile Include="Interfaces\IHero.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,5 +104,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

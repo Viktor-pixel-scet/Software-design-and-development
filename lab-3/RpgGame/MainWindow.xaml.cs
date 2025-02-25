@@ -1,6 +1,11 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using RpgGame.Interfaces;
+using RpgGame.Heroes;
+using RpgGame.Decorators.Weapons;
+using RpgGame.Decorators.Armor;
+using RpgGame.Decorators.Accessories;
 
 namespace RpgGame
 {
